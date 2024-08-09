@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/davidclaeysquinones/epg-info
+          images: ghcr.io/davidclaeysquinones/webnut
           tags: |
              type=semver,pattern={{raw}}
       - name: Build and push

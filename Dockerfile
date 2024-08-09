@@ -1,5 +1,5 @@
 FROM python:2.7
-MAINTAINER Eric Taieb Walch <teknologist@gmail.com>
+LABEL org.opencontainers.image.authors="Eric Taieb Walch <teknologist@gmail.com>"
 
 RUN mkdir /app && \
 cd /app && \

@@ -2,7 +2,7 @@ FROM python:3.11-alpine
 
 RUN apk update \
 && apk upgrade --available \
-&& apk add git tzdata \
+&& apk add git tzdata bash  \
 && mkdir /app \
 && cd /app \
 && git clone https://github.com/rshipp/python-nut2.git \

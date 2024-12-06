@@ -22,6 +22,7 @@ More infos on webNUT:  https://github.com/rshipp/webNUT
 version: '3.3'
 services:
   nut:
+    # image: git.claeyscloud.com/david/webnut:latest
     image: ghcr.io/davidclaeysquinones/webnut
     environment:
        # adjust these variable as needed

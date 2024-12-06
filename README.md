@@ -1,6 +1,7 @@
 # docker-webNUT
 
 This repository is a fork of https://github.com/teknologist/docker-webnut
+It is based on it's content but this docker image includes updated dependencies.
 
 webNUT (UPS network monitoring web ui) dockerized.
 

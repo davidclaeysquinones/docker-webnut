@@ -6,20 +6,33 @@ webNUT (UPS network monitoring web ui) dockerized.
 
 More infos on webNUT:  https://github.com/rshipp/webNUT
 
-Set the following environment variables:
+## Environment Variables
 
-**UPS_HOST**    with NUT server host IP  *(default: 127.0.0.1)*
+| Variable                      | Description                                                                | Default                          |
+|-------------------------------|----------------------------------------------------------------------------|----------------------------------|
+| UPS_HOST                      | The NUT server host IP                                                     | 127.0.0.1                        |            
+| UPS_PORT                      | The NUT server port                                                        | 3493                             |
+| UPS_USER                      | The NUT server username                                                    | monuser                          |
+| UPS_PASSWORD                  | The NUT server  password                                                   | secret                           |
 
-**UPS_PORT**	  with NUT server port  *(default: 3493)*
+## Compose file
 
-**UPS_USER**    with NUT server username   *(default: monuser)*
+```sh
+version: '3.3'
+services:
+  nut:
+    image: ghcr.io/davidclaeysquinones/webnut
+    environment:
+       # adjust these variable as needed
+       - UPS_HOST=10.11.12.13 
+       - UPS_PORT=3493
+       - UPS_USER="monuser"
+       - UPS_PASSWORD="secret"
+    restart: unless-stopped
+    security_opt:
+       - no-new-privileges:true
+    ports:
+       - 6543:6543
+```
 
-**UPS_PASSWORD**     with NUT server  password   *(default: secret)*
-
-
-
-
-Run with:
-
-> docker run -e UPS_HOST="10.11.12.13"  -e UPS_PORT="3493" -e UPS_USER="monuser" -e UPS_PASSWORD="secret" -p 6543:6543 teknologist/webnut:latest
 
